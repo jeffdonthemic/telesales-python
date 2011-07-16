@@ -1,0 +1,17 @@
+application: jeffdouglas-salesforce1
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static
+  mime_type: text/html
+  
+- url: /stylesheets
+  static_dir: stylesheets
+  mime_type: text/css
+    
+- url: /.*
+  script: main.py
+  secure: always

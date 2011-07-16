@@ -1,0 +1,24 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+	<span class="title">Simple Login Sample</span>
+
+	<p/>
+	
+	<span class="heading">Login Succeeded</span>
+	
+	<p/>
+
+	<span class="bodyText">Your login was successful. Below are your session details:</span>
+	
+	<p/>
+	
+	<span class="fixedWidth">UserId: {{ user_id }}</span><br/>
+	
+	<span class="fixedWidth">Server URL: {{ server_url }}</span><br/>
+	
+	<span class="fixedWidth">Session Id: {{ session_id }}</span>
+</body>
+</html>

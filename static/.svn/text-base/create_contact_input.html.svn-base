@@ -1,0 +1,45 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+	<span class="title">Create Contact Sample</span>
+	<p/>
+	<span class="heading">Enter your credentials:</span>
+	<p/>
+	<form method="post" action="/createContact">
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" name="uid"/></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="pwd"/></td>
+			</tr>
+		</table>
+		<p/>
+		<span class="heading">Enter contact info:</span>
+		<p/>
+		<table cellpadding="2">
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" name="firstName"/></td>
+				<td>Phone:</td>
+				<td><input type="text" name="phone"/></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="lastName"/></td>
+				<td>Email:</td>
+				<td><input type="text" name="email"/></td>
+			</tr>
+			<tr>
+				<td colspan="4" align="right">
+					<input type="submit" value="Create"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

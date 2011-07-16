@@ -1,0 +1,24 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+	<span class="title">Simple Login Sample</span>
+
+	<p/>
+	
+	<span class="heading">Login Failed</span>
+	
+	<p/>
+
+	<span class="bodyText">Your login failed. Please check your username and password as well as your IP range restrictions. Error details:</span>
+	
+	<p/>
+	
+	<span class="fixedWidth">Error Code: {{ errorCode }}</span>
+	
+	<br/>
+	
+	<span class="fixedWidth">Error Text: {{ errorString }}</span>
+</body>
+</html>

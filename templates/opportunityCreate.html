@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>Salesforce.com Telesales Application</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
+</head>
+<body>
+	<span class="title">Create a New Opportunity</span>
+	<p/>
+	
+	<form method="post" action="/opportunityCreate">
+	<input type="hidden" name="accountId" value="{{accountId}}">
+	<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Account</td>
+			<td bgcolor="#ffffff">{{accountName}}</td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Name</td>
+			<td bgcolor="#ffffff"><input type="input" name="name" style="width:250px"></td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Amount</td>
+			<td bgcolor="#ffffff"><input type="input" name="amount"></td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Stage</td>
+			<td bgcolor="#ffffff">
+			<select name="stageName">
+				<option>Prospecting</option>
+				<option>Qualifications</option>
+				<option>Value Proposition</option>
+			</select>
+			</td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Probability</td>
+			<td bgcolor="#ffffff">
+			<select name="probability">
+				<option value="10">10%</option>
+				<option value="25">25%</option>
+				<option value="50">50%</option>
+				<option value="75">75%</option>
+			</select>
+			</td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Close Date</td>
+			<td bgcolor="#ffffff"><input type="input" name="closeDate" value="2012-01-01"></td>
+		</tr>	
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Order</td>
+			<td bgcolor="#ffffff"><input type="input" name="orderNumber"></td>
+		</tr>	
+		<tr>
+			<td colspan="2" bgcolor="#ffffff" align="center"><input type="submit" value="Submit"></td>
+		</tr>
+	</table>
+	</form>
+	
+</body>
+</html>

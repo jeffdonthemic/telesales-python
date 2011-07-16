@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Salesforce.com Telesales Application</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
+</head>
+<body>
+	<span class="nav"><a href="/accountLookup">Search</a></span><p/>
+	<span class="title">Account Display</span>
+	<p/>
+	
+	<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC">
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Name</td>
+			<td bgcolor="#ffffff">{{ account.Name }}</td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">City</td>
+			<td bgcolor="#ffffff">{{account.BillingCity}}</td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">State</td>
+			<td bgcolor="#ffffff">{{account.BillingState}}</td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Phone</td>
+			<td bgcolor="#ffffff">{{account.Phone}}</td>
+		</tr>
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Website</td>
+			<td bgcolor="#ffffff">{{account.Website}}</td>
+		</tr>	
+	</table>
+	
+	<br><a href="/opportunityCreate?accountId={{account.Id}}">Create a new Opportunity</a><p/>	
+	
+	{% if opportunityCount %}
+	
+		<p/><span class="heading">Opportunities for {{account.Name}}</span><br><p/>
+		
+		<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC" width="50%">
+		<tr bgcolor="#407BA8">
+			<td style="color: #ffffff; font-weight: bold;">Name</td>
+			<td style="color: #ffffff; font-weight: bold;">Amount</td>
+			<td style="color: #ffffff; font-weight: bold;">Stage</td>
+			<td style="color: #ffffff; font-weight: bold;">Probability</td>
+			<td style="color: #ffffff; font-weight: bold;">Close Date</td>
+			<td style="color: #ffffff; font-weight: bold;">Order</td>
+		</tr>
+		{% for o in opportunities %}
+			<tr style="background:#ffffff" onMouseOver="this.style.background='#eeeeee';" onMouseOut="this.style.background='#ffffff';">
+				<td>{{o.Name}}</td>
+				<td>{{o.Amount}}</td>
+				<td>{{o.StageName}}</td>
+				<td>{{o.Probability}}</td>
+				<td>{{o.CloseDate}}</td>
+				<td>{{o.OrderNumber__c}}</td>
+			</tr>
+		{% endfor %}
+		</table>
+		
+	{% else %}
+		<p/><span class="heading">No Opportunities found for {{account.Name}}</span>
+	{% endif %}
+	
+</body>
+</html>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/18/trunk/force-app-engine/python/templates
+END
+test_login_failed.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/7/trunk/force-app-engine/python/templates/test_login_failed.html
+END
+simple_login_result.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/trunk/force-app-engine/python/templates/simple_login_result.html
+END
+unit_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/18/trunk/force-app-engine/python/templates/unit_test.html
+END
+acct_lookup.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/12/trunk/force-app-engine/python/templates/acct_lookup.html
+END
+simple_login_failed.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/3/trunk/force-app-engine/python/templates/simple_login_failed.html
+END
+create_contact_result.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/12/trunk/force-app-engine/python/templates/create_contact_result.html
+END

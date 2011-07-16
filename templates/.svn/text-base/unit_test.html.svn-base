@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+</head>
+<body>
+<span class="title">Unit Test </span>
+
+<p /><span class="heading">Login Succeeded</span>
+<p /><span class="bodyText">Your login was successful. Below are
+your session details:</span>
+<p /><span class="fixedWidth">UserId: {{ user_id }}</span><br />
+
+<span class="fixedWidth">Server URL: {{ server_url }}</span><br />
+
+<span class="fixedWidth">Session Id: {{ session_id }}</span>
+<li><a href="/unittest?op=login&sid={{ session_id }}">Login</a></li>
+<li><a href="/unittest?op=query&sid={{ session_id }}">Query
+Accounts</a></li>
+<li><a href="/unittest?op=create&sid={{ session_id }}">Create
+Account</a></li>
+<li><a href="/unittest?op=delete&sid={{ session_id }}">Delete
+Account</a></li>
+<li><a href="/unittest?op=update&sid={{ session_id }}">Update
+Account</a></li>
+
+<li><a href="/unittest?op=global&sid={{ session_id }}">Describe 
+Global</a></li>
+
+<li><a href="/unittest?op=describeAcc&sid={{ session_id }}">Describe 
+SObject</a></li>
+
+<li><a href="/unittest?op=retrieve&sid={{ session_id }}">Retrieve 
+SObject</a></li>
+
+
+<li><a href="/unittest?op=getDeleted&sid={{ session_id }}">getDeleted 
+</a></li>
+
+
+<li><a href="/unittest?op=getUpdated&sid={{ session_id }}">getUpdated 
+</a></li>
+
+<li><a href="/unittest?op=getUserInfo&sid={{ session_id }}">get User Info 
+</a></li>
+
+<!--  meta data api tests coming soon -->
+
+</body>
+</html>

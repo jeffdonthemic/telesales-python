@@ -1,0 +1,20 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+	<span class="title">Create Contact Sample</span>
+
+	<p/>
+	
+	{% if success %}
+	<span class="heading">Create contact succeeded</span>
+	<p/>
+	<span class="bodyText">The record was created with id '{{ objId }}'</span>
+	{% else %}
+	<span class="heading">Create contact failed</span>
+	<p/>
+	<span class="bodyText">Message(s): <span style="font-family:Courier">{{ errors }}</span></span>
+	{% endif %}
+</body>
+</html>

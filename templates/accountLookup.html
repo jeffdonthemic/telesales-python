@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Salesforce.com Telesales Application</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css"/>
+</head>
+<body>
+	<span class="title">Welcome to the ACME Salesforce.com Telesales Application</span>
+	<p/>
+	<p>Before creating a new Opportunity, ensure that the Account does not already exist. You can also <a href="/accountCreate">create a new account</a>.</p>
+	<p/>
+	<form method="post" action="/accountLookup">
+		<span class="heading">Search by Account Name:</span>
+		<p/>
+		<input type="text" name="accountName" value="{{ accountName }}" style="width: 300px"/>
+		&nbsp
+		<input type="submit" value="Search"/>
+		&nbsp 
+	</form>
+	<p/>
+	{% if accounts %}
+	<span class="heading">{{ accounts|length }} accounts matching your search criteria:</span>
+	
+	<p/>
+	<table border="0" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC" width="50%">
+	<tr bgcolor="#407BA8">
+		<td style="color: #ffffff; font-weight: bold;">Name</td>
+		<td style="color: #ffffff; font-weight: bold;">City</td>
+		<td style="color: #ffffff; font-weight: bold;">State</td>
+		<td style="color: #ffffff; font-weight: bold;">Phone</td>
+	</tr>
+	{% for acct in accounts %}
+		<tr style="background:#ffffff" onMouseOver="this.style.background='#eeeeee';" onMouseOut="this.style.background='#ffffff';">
+			<td><a href="/accountDisplay?accountId={{acct.Id}}">{{ acct.Name }}</a></td>
+			<td>{{acct.BillingCity}}</td>
+			<td>{{acct.BillingState}}</td>
+			<td>{{acct.Phone}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+	
+	{% else %}
+	<span class="heading">No matching accounts found.</span>
+	{% endif %}
+	<p/>
+	
+	<p/><hr style="margin-top: 150px">
+	You can download the files for this demo <a href="/static/code.zip">here</a>.<br>
+	For more information regarding this demo see: <a href="http://blog.jeffdouglas.com/2009/04/13/forcecom-googl…-engine-python/" target="_blank">http://blog.jeffdouglas.com/2009/04/13/forcecom-googl…-engine-python/</a>
+	
+	
+</body>
+</html>

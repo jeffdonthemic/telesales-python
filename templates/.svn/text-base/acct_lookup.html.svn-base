@@ -1,0 +1,74 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+	<script>
+		function showAccountInfo(id) {
+			var theAccount = accountInfo[id];
+			var accountInfoPanel = document.getElementById('accountInfoPanel');
+			accountInfoPanel.style.display = '';
+			document.getElementById('idOutput').innerHTML = id;
+			document.getElementById('nameOutput').innerHTML = theAccount.name;
+			document.getElementById('phoneOutput').innerHTML = theAccount.phone;
+			document.getElementById('websiteOutput').innerHTML = theAccount.website;
+		}
+	</script>
+	<style>
+		.outputData {
+			font-family: Courier;
+		}
+	</style>
+</head>
+<body>
+	<span class="title">Account Lookup Sample</span>
+	<p/>
+	<span class="heading">Enter your credentials:</span>
+	<p/>
+	<form method="post" action="/accountLookup">
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" name="uid" value="{{ username }}"/></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="pwd" value="{{ password }}"/></td>
+			</tr>
+		</table>
+		<p/>
+		<span class="heading">Enter an account name:</span>
+		<p/>
+		<input type="text" name="account" value="{{ accountName }}"/>
+		&nbsp
+		<input type="submit" value="Lookup"/>
+		&nbsp 
+	</form>
+	<p/>
+	{% if accounts %}
+	<span class="heading">Found {{ accounts|length }} accounts:</span>
+	{% endif %}
+	<p/>
+	{% for acct in accounts %}
+		{{ acct.Name }} <a href="javascript:showAccountInfo('{{ acct.Id }}')">[View Info]</a>
+		<br/>
+	{% endfor %}
+	<p/>
+	<script>
+		var accountInfo = {
+	{% for acct in accounts %}
+			'{{ acct.Id }}': {name:'{{ acct.Name }}', phone:'{{ acct.Phone }}', website:'{{ acct.WebSite }}'},
+	{% endfor %}
+			}
+	</script>
+	<div id="accountInfoPanel" style="display:none; background-color:#e4e4e4; border:solid; border:1px solid #999999; padding:10px">
+		<span class="heading">Account Info:</span>
+		<p/>
+		Name: <span class="outputData" id="nameOutput"></span>
+		<br/>
+		ID: <span class="outputData" id="idOutput"></span>
+		<br/>
+		Phone: <span class="outputData" id="phoneOutput"></span>
+		<br/>
+		Web Site: <span class="outputData" id="websiteOutput"></span>
+	</div>
+</body>
+</html>
